@@ -36,8 +36,3 @@ resource "azurerm_network_security_group" "sg" {
         destination_address_prefix = "*"
     }
 }
-
-data "azurerm_public_ip" "ip_data_db" {
-  name                = azurerm_public_ip.publicip.name
-  resource_group_name = azurerm_resource_group.rg.name
-}
