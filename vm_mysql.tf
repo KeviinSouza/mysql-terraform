@@ -28,6 +28,7 @@ resource "azurerm_linux_virtual_machine" "vm_mysql" {
     version   = "latest"
   }
 
+  #Profile-vm
   computer_name                   = "vm-linux"
   admin_username                  = var.user
   admin_password                  = var.password
@@ -50,7 +51,7 @@ resource "null_resource" "upload_mysql" {
       host     = data.azurerm_public_ip.ip_data_db.ip_address
     }
     source      = "mysql"
-    destination = "/home/azureuser"
+    destination = "/home/kevinazure"
   }
 
   depends_on = [time_sleep.wait_30_seconds_db]
